@@ -1,0 +1,292 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:   <http://arupmind.org/ontology#> .
+
+# ─────────────────────────────────────────
+#  Ontology declaration
+# ─────────────────────────────────────────
+<http://arupmind.org/ontology#>
+    a owl:Ontology ;
+    rdfs:label "ArupMind Construction & Engineering Ontology" ;
+    rdfs:comment "Domain ontology covering Construction, Fire Safety, Electrical Safety, and Structural Engineering for the ArupMind RAG knowledge system." .
+
+
+# ═════════════════════════════════════════
+#  TOP-LEVEL DOMAIN CLASSES
+# ═════════════════════════════════════════
+
+ex:Construction a owl:Class ;
+    skos:prefLabel "Construction" ;
+    skos:altLabel "building construction" ;
+    skos:altLabel "construction industry" ;
+    skos:altLabel "built environment" ;
+    rdfs:subClassOf owl:Thing .
+
+ex:FireSafety a owl:Class ;
+    skos:prefLabel "Fire Safety" ;
+    skos:altLabel "fire protection" ;
+    skos:altLabel "fire code" ;
+    skos:altLabel "fire prevention" ;
+    skos:altLabel "fire safety engineering" ;
+    rdfs:subClassOf owl:Thing .
+
+ex:Electrical a owl:Class ;
+    skos:prefLabel "Electrical" ;
+    skos:altLabel "electrical systems" ;
+    skos:altLabel "electrical engineering" ;
+    skos:altLabel "power systems" ;
+    rdfs:subClassOf owl:Thing .
+
+ex:StructuralEngineering a owl:Class ;
+    skos:prefLabel "Structural Engineering" ;
+    skos:altLabel "structural design" ;
+    skos:altLabel "structural analysis" ;
+    skos:altLabel "structural systems" ;
+    rdfs:subClassOf owl:Thing .
+
+
+# ═════════════════════════════════════════
+#  CONSTRUCTION — SUBCLASSES
+# ═════════════════════════════════════════
+
+ex:BuildingMaterials a owl:Class ;
+    skos:prefLabel "Building Materials" ;
+    skos:altLabel "construction materials" ;
+    skos:altLabel "building components" ;
+    skos:altLabel "structural materials" ;
+    skos:altLabel "material properties" ;
+    rdfs:subClassOf ex:Construction .
+
+ex:ConcreteStructures a owl:Class ;
+    skos:prefLabel "Concrete Structures" ;
+    skos:altLabel "reinforced concrete" ;
+    skos:altLabel "concrete slab" ;
+    skos:altLabel "concrete buildings" ;
+    skos:altLabel "concrete construction" ;
+    skos:altLabel "prestressed concrete" ;
+    rdfs:subClassOf ex:Construction .
+
+ex:SteelStructures a owl:Class ;
+    skos:prefLabel "Steel Structures" ;
+    skos:altLabel "steel frame" ;
+    skos:altLabel "structural steel" ;
+    skos:altLabel "steel construction" ;
+    skos:altLabel "steel buildings" ;
+    rdfs:subClassOf ex:Construction .
+
+ex:Construction_safety a owl:Class ;
+    skos:prefLabel "Construction Safety" ;
+    skos:altLabel "jobsite safety" ;
+    skos:altLabel "worksite hazards" ;
+    skos:altLabel "construction accidents" ;
+    skos:altLabel "worker safety" ;
+    skos:altLabel "site safety" ;
+    skos:altLabel "occupational safety" ;
+    rdfs:subClassOf ex:Construction .
+
+
+# ═════════════════════════════════════════
+#  FIRE SAFETY — SUBCLASSES
+# ═════════════════════════════════════════
+
+ex:FireDetection a owl:Class ;
+    skos:prefLabel "Fire Detection" ;
+    skos:altLabel "smoke detector" ;
+    skos:altLabel "fire alarm" ;
+    skos:altLabel "heat detector" ;
+    skos:altLabel "fire detection system" ;
+    skos:altLabel "alarm system" ;
+    rdfs:subClassOf ex:FireSafety .
+
+ex:FireSuppression a owl:Class ;
+    skos:prefLabel "Fire Suppression" ;
+    skos:altLabel "sprinkler system" ;
+    skos:altLabel "fire extinguishing" ;
+    skos:altLabel "fire control" ;
+    skos:altLabel "fire suppression system" ;
+    skos:altLabel "automatic sprinkler" ;
+    rdfs:subClassOf ex:FireSafety .
+
+ex:FireResistantMaterials a owl:Class ;
+    skos:prefLabel "Fire Resistant Materials" ;
+    skos:altLabel "fire rated" ;
+    skos:altLabel "flame retardant" ;
+    skos:altLabel "fire resistant" ;
+    skos:altLabel "fire rated construction" ;
+    skos:altLabel "intumescent" ;
+    skos:altLabel "non combustible materials" ;
+    rdfs:subClassOf ex:FireSafety .
+
+ex:SmokeControl a owl:Class ;
+    skos:prefLabel "Smoke Control" ;
+    skos:altLabel "smoke ventilation" ;
+    skos:altLabel "smoke management" ;
+    skos:altLabel "smoke exhaust" ;
+    skos:altLabel "smoke extraction" ;
+    skos:altLabel "pressurization system" ;
+    rdfs:subClassOf ex:FireSafety .
+
+ex:EgressDesign a owl:Class ;
+    skos:prefLabel "Egress Design" ;
+    skos:altLabel "emergency exit" ;
+    skos:altLabel "evacuation route" ;
+    skos:altLabel "exit pathway" ;
+    skos:altLabel "means of egress" ;
+    skos:altLabel "emergency evacuation" ;
+    skos:altLabel "escape route" ;
+    rdfs:subClassOf ex:FireSafety .
+
+
+# ═════════════════════════════════════════
+#  ELECTRICAL — SUBCLASSES
+# ═════════════════════════════════════════
+
+ex:PowerDistribution a owl:Class ;
+    skos:prefLabel "Power Distribution" ;
+    skos:altLabel "electrical grid" ;
+    skos:altLabel "power supply" ;
+    skos:altLabel "electricity distribution" ;
+    skos:altLabel "power distribution system" ;
+    skos:altLabel "distribution panel" ;
+    skos:altLabel "switchgear" ;
+    rdfs:subClassOf ex:Electrical .
+
+ex:CircuitProtection a owl:Class ;
+    skos:prefLabel "Circuit Protection" ;
+    skos:altLabel "circuit breaker" ;
+    skos:altLabel "fuse" ;
+    skos:altLabel "overcurrent protection" ;
+    skos:altLabel "ground fault protection" ;
+    skos:altLabel "arc fault protection" ;
+    skos:altLabel "surge protection" ;
+    rdfs:subClassOf ex:Electrical .
+
+ex:CableManagement a owl:Class ;
+    skos:prefLabel "Cable Management" ;
+    skos:altLabel "cable tray" ;
+    skos:altLabel "conduit" ;
+    skos:altLabel "wire management" ;
+    skos:altLabel "cable routing" ;
+    skos:altLabel "wiring system" ;
+    skos:altLabel "cable containment" ;
+    rdfs:subClassOf ex:Electrical .
+
+ex:ElectricalHazards a owl:Class ;
+    skos:prefLabel "Electrical Hazards" ;
+    skos:altLabel "electrocution" ;
+    skos:altLabel "arc flash" ;
+    skos:altLabel "electrical shock" ;
+    skos:altLabel "electrical fire" ;
+    skos:altLabel "electrical hazard" ;
+    skos:altLabel "electrical accident" ;
+    skos:altLabel "shock hazard" ;
+    rdfs:subClassOf ex:Electrical .
+
+ex:ElectricalSafety a owl:Class ;
+    skos:prefLabel "Electrical Safety" ;
+    skos:altLabel "electrical grounding" ;
+    skos:altLabel "earthing" ;
+    skos:altLabel "bonding conductor" ;
+    skos:altLabel "electrical code" ;
+    skos:altLabel "NEC compliance" ;
+    skos:altLabel "electrical inspection" ;
+    rdfs:subClassOf ex:Electrical .
+
+ex:GroundingAndBonding a owl:Class ;
+    skos:prefLabel "Grounding And Bonding" ;
+    skos:altLabel "electrical grounding" ;
+    skos:altLabel "earthing" ;
+    skos:altLabel "bonding conductor" ;
+    skos:altLabel "ground wire" ;
+    skos:altLabel "equipotential bonding" ;
+    rdfs:subClassOf ex:Electrical .
+
+
+# ═════════════════════════════════════════
+#  STRUCTURAL ENGINEERING — SUBCLASSES
+# ═════════════════════════════════════════
+
+ex:SeismicDesign a owl:Class ;
+    skos:prefLabel "Seismic Design" ;
+    skos:altLabel "earthquake proofing" ;
+    skos:altLabel "seismic resistance" ;
+    skos:altLabel "earthquake protection" ;
+    skos:altLabel "seismic retrofit" ;
+    skos:altLabel "earthquake resistant design" ;
+    skos:altLabel "seismic hazard" ;
+    skos:altLabel "base isolation" ;
+    rdfs:subClassOf ex:StructuralEngineering .
+
+ex:LoadAnalysis a owl:Class ;
+    skos:prefLabel "Load Analysis" ;
+    skos:altLabel "structural load" ;
+    skos:altLabel "dead load" ;
+    skos:altLabel "live load" ;
+    skos:altLabel "load bearing" ;
+    skos:altLabel "gravity load" ;
+    skos:altLabel "load combination" ;
+    skos:altLabel "structural loading" ;
+    rdfs:subClassOf ex:StructuralEngineering .
+
+ex:WindDesign a owl:Class ;
+    skos:prefLabel "Wind Design" ;
+    skos:altLabel "wind load" ;
+    skos:altLabel "wind resistance" ;
+    skos:altLabel "hurricane resistance" ;
+    skos:altLabel "wind pressure" ;
+    skos:altLabel "storm resistance" ;
+    skos:altLabel "wind engineering" ;
+    rdfs:subClassOf ex:StructuralEngineering .
+
+ex:StructuralFailure a owl:Class ;
+    skos:prefLabel "Structural Failure" ;
+    skos:altLabel "structural collapse" ;
+    skos:altLabel "building failure" ;
+    skos:altLabel "structural damage" ;
+    skos:altLabel "progressive collapse" ;
+    skos:altLabel "structural instability" ;
+    skos:altLabel "failure mode" ;
+    rdfs:subClassOf ex:StructuralEngineering .
+
+ex:FoundationSystems a owl:Class ;
+    skos:prefLabel "Foundation Systems" ;
+    skos:altLabel "pile foundation" ;
+    skos:altLabel "footing" ;
+    skos:altLabel "shallow foundation" ;
+    skos:altLabel "deep foundation" ;
+    skos:altLabel "foundation design" ;
+    skos:altLabel "soil bearing capacity" ;
+    rdfs:subClassOf ex:StructuralEngineering .
+
+
+# ═════════════════════════════════════════
+#  RELATIONSHIPS BETWEEN CONCEPTS
+# ═════════════════════════════════════════
+
+ex:relatedTo a owl:ObjectProperty ;
+    rdfs:label "related to" ;
+    rdfs:comment "Indicates a meaningful relationship between two domain concepts." .
+
+ex:dependsOn a owl:ObjectProperty ;
+    rdfs:label "depends on" ;
+    rdfs:comment "Indicates that one concept depends on another for function or safety." .
+
+ex:isPartOf a owl:ObjectProperty ;
+    rdfs:label "is part of" ;
+    rdfs:comment "Indicates that one concept is a component of a larger concept." .
+
+# Defined relationships
+ex:SeismicDesign      ex:relatedTo ex:FoundationSystems .
+ex:SeismicDesign      ex:relatedTo ex:LoadAnalysis .
+ex:StructuralFailure  ex:relatedTo ex:LoadAnalysis .
+ex:StructuralFailure  ex:relatedTo ex:WindDesign .
+ex:FireDetection      ex:relatedTo ex:FireSuppression .
+ex:FireSuppression    ex:relatedTo ex:SmokeControl .
+ex:EgressDesign       ex:relatedTo ex:SmokeControl .
+ex:CableManagement    ex:isPartOf  ex:Electrical .
+ex:CircuitProtection  ex:relatedTo ex:ElectricalHazards .
+ex:ElectricalHazards  ex:relatedTo ex:Construction_safety .
+ex:ConcreteStructures ex:relatedTo ex:FoundationSystems .
+ex:SteelStructures    ex:relatedTo ex:LoadAnalysis .
